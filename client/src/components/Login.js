@@ -27,8 +27,10 @@ const Login = () => {
     axiosWithAuth()
       .post('/login', login)
       .then(res => {
-        console.log('this is the response from post', res)
-        window.localStorage.setItem('token', res.data.payload)
+        console.log('this is the response from post', res);
+        window.localStorage.setItem('token', res.data.payload);
+        history.push('/bubbles');
+
       })
       .catch(err => {
         console.log("there was an error with login: ", err)
